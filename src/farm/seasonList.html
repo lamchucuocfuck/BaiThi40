@@ -30,53 +30,53 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3 class="font-weight-bold">MY FARM</h3>
-            </div>
+            <a href="/src/home.html"><img width="100%" src="/img/Hand-Drawn-Farm-Products-Logos-Free-Vector.jpg" alt=""></a>
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="/src/home.html">Trang Chủ</a>
+                    <a href="./home.html"><i class="fa-solid fa-house pr-2"></i>Trang Chủ</a>
                 </li>
 
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Người Dùng</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Danh Sách Người Dùng</a>
+                            <a href="/src/user/userList.html"> <i class="fa-solid fa-list pr-2"></i>Danh Sách Người Dùng</a>
                         </li>
                         <li>
-                            <a href="#">Thêm Người Dùng Mới</a>
+                            <a href="/src/user/createUser.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Người Dùng Mới</a>
                         </li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Mùa Vụ</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="/src/farm/seasonList.html">Danh Sách Mùa Vụ</a>
+                            <a href="/src/farm/seasonList.html"><i class="fa-solid fa-list pr-2"></i>Danh Sách Mùa Vụ</a>
                         </li>
                         <li>
-                            <a href="/src/farm/createSeason.html">Thêm Mùa Vụ Mới</a>
+                            <a href="/src/farm/createSeason.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Mùa Vụ Mới</a>
                         </li>
-                        
+
                         <li>
-                            <a href="/src/farm/reportSeason.html">Thống Kê & Báo Cáo</a>
+                            <a href="/src/farm/reportSeason.html"><i class="fa-solid fa-address-book pr-2"></i>Thống Kê & Báo Cáo</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Bản Đồ</a>
+                    <a href="/src/map.html"><i class="fa-solid fa-map pr-2"></i>Bản Đồ</a>
+                    
                 </li>
                 <li>
-                    <a href="#">404</a>
+                    <a href="/src/404.html"><i class="fa-solid fa-exclamation pr-2"></i>404</a>
                 </li>
             </ul>
 
         </nav>
         <!-- Page Content  -->
+
         <div id="content">
             <nav class="navbar navbar-expand-lg ">
                 <button type="button" id="sidebarCollapse" class="btn btn-info d-md-none">
@@ -90,9 +90,10 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Tên Mùa Vụ</th>
-                        <th scope="col">Số Lượng Ước Tính (Kg)</th>
+                        <th scope="col">SL Ước Tính/Thực Tế Đạt Được(Kg)</th>
                         <th scope="col">Ngày Bắt Đầu</th>
-                        <th scope="col">Ngày Dự Kiến Kết Thúc</th>
+                        <th scope="col">Ngày Thu Hoạch</th>
+                        <th scope="col">Trạng Thái</th>
                         <th scope="col">Hành Động</th>
                     </tr>
                 </thead>
@@ -108,28 +109,59 @@
     <div id="myEdit" class="myModal">
         <div class="modal-content container">
             <span class="close d-flex justify-content-end">&times;</span>
-            <form action="">
+            <form id="formEditSeason" action="">
                 <div class="form-group">
                     <span>ID</span>
-                    <input disabled id="textSeasonID" type="text" class="form-control" >
+                    <input disabled id="textSeasonID" type="text" class="form-control">
                 </div>
                 <div class="form-group">
                     <span>Tên Mùa Vụ</span>
-                    
+
                     <input id="textNameSeasonEdit" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <span>Sản Lượng Ước Tính (Kg)</span>
+                    <span>Sản Lượng Ước Tính</span>
 
-                    <input disabled id="textQuantityEdit" type="text" class="form-control">
+                    <input disabled id="textQuantityEdit" type="number" class="form-control">
                 </div>
                 <div class="form-group">
                     <span>Ngày Bắt Đầu</span>
-                    <input id="textDateStartEdit" type="text" class="form-control">
+                    <input id="textDateStartEdit" type="date" class="form-control">
                 </div>
                 <div class="form-group">
-                    <span>Ngày Kết Thúc Dự Kiến</span>
-                    <input id="textDateEndEdit" type="text" class="form-control">
+                    <span>Ngày Thu Hoạch</span>
+                    <input id="textDateEndEdit" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <span">Trạng Thái</span>
+                        <div class="form-check">
+                            <input class="form-check-input radioBtn" type="radio" name="Radio" id="soonSeasonEdit"
+                                value="Chưa Bắt Đầu" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Chưa bắt đầu
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input radioBtn" type="radio" name="Radio" id="inSeasonEdit"
+                                value="Trong Mùa Vụ">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Trong mùa vụ
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input radioBtn" type="radio" name="Radio" id="endSeasonEdit"
+                                value="Đã Kết Thúc" checked>
+                            <label class="form-check-label" for="exampleRadios3">
+                                Đã kết thúc
+                            </label>
+                            <div>
+                                <input id="textQuantityEndEdit" class="statusSeason w-50 form-control"
+                                    style="display:none" type="number" placeholder="Nhập Sản Lượng Đạt Được..."
+                                    required>
+
+                            </div>
+                        </div>
+
                 </div>
                 <div class="form-gro d-flex justify-content-end mb-3">
                     <button type="button" class="btn btn-primary" id="btnEditDone">Cập Nhật</button>
@@ -149,12 +181,34 @@
 
     <script>
 
+
+        $('input[type="radio"]').click(function () {
+
+            if ($(this).attr("value") == "Chưa Bắt Đầu" || "Trong Mùa Vụ") {
+                $(".statusSeason").hide('slow');
+            }
+            if ($(this).attr("value") == "Đã Kết Thúc") {
+                $(".statusSeason").show('slow');
+            }
+        });
+
+
+
+        function confirmDelete(id) {
+            let text = "Bạn Có Chắc Muốn Xóa Vụ Này!!!\nChọn OK Hoặc Cancel.";
+            if (confirm(text) == true) {
+                deleteUser(id)
+            }
+
+        }
+
+
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
         });
-        
+
 
         $(".close").click(function () {
             $("#myEdit").hide()
@@ -176,12 +230,13 @@
                     for (var i = 0; i < result.length; i++) {
                         strList = strList + '<tr><th scope = "row">' + result[i].id + '</th>' +
                             '<td>' + result[i].name + '</td>' +
-                            '<td>' + result[i].quantity + '</td>' +
+                            '<td>' + result[i].quantity + " / " + result[i].quantityend + '</td>' +
                             '<td>' + result[i].startAt + '</td>' +
                             '<td>' + result[i].endAt + '</td>' +
+                            '<td>' + result[i].status + '</td>' +
                             "<td>" +
-                            '<img class="actionIcon" style="width: 30px; height: 30px; cursor: pointer" class="" src="/img/setting.png" onclick = edit(' + result[i].id + ')>' +
-                            '<img class="actionIcon" style="width: 30px; height: 30px; cursor: pointer" class="" src="/img/trash-box.png" onclick = deleteUser(' + result[i].id + ')>'
+                            '<img class="actionIcon mr-2" style="width: 30px; height: 30px; cursor: pointer" class="" src="/img/setting.png" onclick = edit(' + result[i].id + ')>' +
+                            '<img class="actionIcon" style="width: 30px; height: 30px; cursor: pointer" class="" src="/img/trash-box.png" onclick = "confirmDelete(' + result[i].id + ')">'
                         "</td></tr>"
                     }
                     $("#tbAct tbody").append(strList);
@@ -198,8 +253,10 @@
                     $("#textSeasonID").val(arrEle[i].id);
                     $("#textNameSeasonEdit").val(arrEle[i].name);
                     $("#textQuantityEdit").val(arrEle[i].quantity);
+                    $("#textQuantityEndEdit").val(arrEle[i].quantityend);
                     $("#textDateStartEdit").val(arrEle[i].startAt);
                     $("#textDateEndEdit").val(arrEle[i].endAt);
+                    $('input[name=Radio]:checked', '#formEditSeason').val(arrEle[i].status)
                     $("#myEdit").show();
                     break;
                 }
@@ -211,8 +268,12 @@
             var id = $("#textSeasonID").val();
             updateData.name = $("#textNameSeasonEdit").val();
             updateData.quantity = $("#textQuantityEdit").val();
+            updateData.quantityend = $("#textQuantityEndEdit").val();
             updateData.startAt = $("#textDateStartEdit").val();
             updateData.endAt = $("#textDateEndEdit").val();
+            updateData.status = $('input[name=Radio]:checked', '#formEditSeason').val();
+
+
 
             console.log(updateData)
             $.ajax({

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../farm/css/createSeason.css">
+    <link rel="stylesheet" href="/src/farm/css/createSeason.css">
 
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -29,48 +29,47 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3 class="font-weight-bold">MY FARM</h3>
-            </div>
+            <a href="/src/home.html"><img width="100%" src="/img/Hand-Drawn-Farm-Products-Logos-Free-Vector.jpg" alt=""></a>
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="/src/home.html">Trang Chủ</a>
+                    <a href="./home.html"><i class="fa-solid fa-house pr-2"></i>Trang Chủ</a>
                 </li>
 
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Người Dùng</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Danh Sách Người Dùng</a>
+                            <a href="/src/user/userList.html"> <i class="fa-solid fa-list pr-2"></i>Danh Sách Người Dùng</a>
                         </li>
                         <li>
-                            <a href="#">Thêm Người Dùng Mới</a>
+                            <a href="/src/user/createUser.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Người Dùng Mới</a>
                         </li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Mùa Vụ</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="/src/farm/seasonList.html">Danh Sách Mùa Vụ</a>
+                            <a href="/src/farm/seasonList.html"><i class="fa-solid fa-list pr-2"></i>Danh Sách Mùa Vụ</a>
                         </li>
                         <li>
-                            <a href="/src/farm/createSeason.html">Thêm Mùa Vụ Mới</a>
+                            <a href="/src/farm/createSeason.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Mùa Vụ Mới</a>
                         </li>
 
                         <li>
-                            <a href="/src/farm/reportSeason.html">Thống Kê & Báo Cáo</a>
+                            <a href="/src/farm/reportSeason.html"><i class="fa-solid fa-address-book pr-2"></i>Thống Kê & Báo Cáo</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Bản Đồ</a>
+                    <a href="/src/map.html"><i class="fa-solid fa-map pr-2"></i>Bản Đồ</a>
+                    
                 </li>
                 <li>
-                    <a href="#">404</a>
+                    <a href="/src/404.html"><i class="fa-solid fa-exclamation pr-2"></i>404</a>
                 </li>
             </ul>
 
@@ -87,48 +86,57 @@
             <div id="myModal" class="myModal">
                 <div class="modal-content" style="border: none">
 
-                    <form class="container" action="">
+                    <form id="formCreateSeason" class="container" action="">
                         <div class="form-group">
                             <span>Tên Mùa Vụ</span>
-                            <input id="textNameSeason" type="text" class="form-control">
+                            <input id="textNameSeason" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <span>Sản Lượng Ước Tính</span>
 
-                            <input id="textQuantity" type="text" class="form-control">
+                            <input id="textQuantity" type="number" class="form-control" required>
                         </div>
 
                         <span>Ngày Bắt Đầu</span>
                         <div class="form-group">
-                            <input id="textDateStart" type="text" class="form-control">
+                            <input id="textDateStart" type="date" class="form-control">
                         </div>
                         <div class="form-group">
                             <span>Ngày Kết Thúc</span>
-                            <input id="textDateEnd" type="text" class="form-control">
+                            <input id="textDateEnd" type="date" class="form-control">
                         </div>
-                        <div class="d-flex">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Chưa bắt đầu
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                    value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Trong mùa vụ
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                    value="option3" checked>
-                                <label class="form-check-label" for="exampleRadios3">
-                                    Đã kết thúc
-                                </label>
-                            </div>
+
+                        <div class="form-group">
+                            <span">Trạng Thái</span>
+                                <div class="form-check">
+                                    <input class="form-check-input radioBtn" type="radio" name="Radio" id="soonSeason"
+                                        value="Chưa Bắt Đầu" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Chưa bắt đầu
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input radioBtn" type="radio" name="Radio" id="inSeason"
+                                        value="Trong Mùa Vụ">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Trong mùa vụ
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input radioBtn" type="radio" name="Radio" id="endSeason"
+                                        value="Đã Kết Thúc" checked>
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Đã kết thúc
+                                    </label>
+                                    <div>
+                                        <input id="quantityEnd" class="statusSeason w-50 form-control"
+                                            style="display:none" type="number" placeholder="Nhập Sản Lượng Đạt Được..."
+                                            required>
+
+                                    </div>
+                                </div>
                         </div>
+
 
                         <div class="d-flex justify-content-end">
                             <button type="button" class="btn btn-primary p-2" id="btnModalAdd">Thêm mùa vụ</button>
@@ -150,10 +158,26 @@
             crossorigin="anonymous"></script>
 
         <script>
+            Date.prototype.toDateInputValue = (function () {
+                var local = new Date(this);
+                local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+                return local.toJSON().slice(0, 10);
+            });
 
-            var HOST = "https://627c763ce5ac2c452af08808.mockapi.io"
-            var ACTIVITY = "activity";
-            var arrEle;
+            $(document).ready(function () {
+                $('#textDateStart').val(new Date().toDateInputValue());
+            });
+
+
+            $('input[type="radio"]').click(function () {
+
+                if ($(this).attr("value") == "Chưa Bắt Đầu" || "Trong Mùa Vụ") {
+                    $(".statusSeason").hide('slow');
+                }
+                if ($(this).attr("value") == "Đã Kết Thúc") {
+                    $(".statusSeason").show('slow');
+                }
+            });
 
             $(document).ready(function () {
                 $('#sidebarCollapse').on('click', function () {
@@ -162,13 +186,18 @@
             });
 
             //--------------------------------------Add User--------------------------------------------
+
+
+
             $("#btnModalAdd").click(function () {
                 var data = {};
                 data.name = $("#textNameSeason").val();
                 data.quantity = $("#textQuantity").val();
+                data.quantityend = $("#quantityEnd").val();
                 data.startAt = $("#textDateStart").val();
                 data.endAt = $("#textDateEnd").val();
-
+                data.status = $('input[name=Radio]:checked', '#formCreateSeason').val();
+                // console.log(data);
                 $.ajax(
                     {
                         url: "https://627c763ce5ac2c452af08808.mockapi.io/activity",

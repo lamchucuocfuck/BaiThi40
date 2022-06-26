@@ -169,28 +169,3 @@ a.article:hover {
         display: none;
     }
 }
-.createUser {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-form {
-    display: flex;
-    flex-direction: column;
- }
- .container {
-    width:650px;
-     padding:50px;
-     border:1px solid #dadce0;
-     border-radius: 1%;
-    min-width:800px;
-} 
-.add {
-    font-weight: bold;
-    text-align: end;
-}
-#font {
-    font-weight: bold;
-    text-align: center;
-}
-
