@@ -1,13 +1,13 @@
-
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
 
-.search-input{
+.search-input {
     outline: none;
     border: none;
 }
+
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
@@ -26,11 +26,11 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    
+
 }
 
 .navbar-btn {
@@ -54,7 +54,7 @@ a:focus {
     display: flex;
     width: 100%;
     align-items: stretch;
-    
+
 }
 
 #sidebar {
@@ -151,7 +151,7 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-   
+
 }
 
 /* ---------------------------------------------------
@@ -162,10 +162,45 @@ a.article:hover {
     #sidebar {
         margin-left: -250px;
     }
+
     #sidebar.active {
         margin-left: 0;
     }
+
     #sidebarCollapse span {
         display: none;
     }
+}
+
+
+.fa {
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#facebook {
+    padding: 10px 17px 10px 20px;
+    color: #3b5998;
+}
+
+#linkedin {
+    color: #1c66c2;
+}
+
+#github {
+    color: #000000;
+}
+
+#codepen {
+    color: #cccccc;
+}
+
+#twitter {
+    color: #44ccf6;
+}
+
+#stack {
+    color: #fe7a15;
 }

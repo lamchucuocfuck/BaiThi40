@@ -29,38 +29,46 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <a href="/src/home.html"><img width="100%" src="/img/Hand-Drawn-Farm-Products-Logos-Free-Vector.jpg" alt=""></a>
+            <a href="/src/home.html"><img width="100%" src="/img/Hand-Drawn-Farm-Products-Logos-Free-Vector.jpg"
+                    alt=""></a>
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="./home.html"><i class="fa-solid fa-house pr-2"></i>Trang Chủ</a>
+                    <a href="/src/home.html"><i class="fa-solid fa-house pr-2"></i>Trang Chủ</a>
                 </li>
 
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Người Dùng</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="/src/user/userList.html"> <i class="fa-solid fa-list pr-2"></i>Danh Sách Người Dùng</a>
+                            <a href="/src/user/userList.html"> <i class="fa-solid fa-list pr-2"></i>Danh Sách Người
+                                Dùng</a>
                         </li>
                         <li>
-                            <a href="/src/user/createUser.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Người Dùng Mới</a>
+                            <a href="/src/user/createUser.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Người Dùng
+                                Mới</a>
                         </li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-list-check pr-2"></i>Quản Lý
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fa-solid fa-list-check pr-2"></i>Quản Lý
                         Mùa Vụ</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="/src/farm/seasonList.html"><i class="fa-solid fa-list pr-2"></i>Danh Sách Mùa Vụ</a>
+                            <a href="/src/farm/seasonList.html"><i class="fa-solid fa-list pr-2"></i>Danh Sách Mùa
+                                Vụ</a>
                         </li>
                         <li>
-                            <a href="/src/farm/createSeason.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Mùa Vụ Mới</a>
+                            <a href="/src/farm/createSeason.html"><i class="fa-solid fa-plus pr-2"></i>Thêm Mùa Vụ
+                                Mới</a>
                         </li>
 
                         <li>
-                            <a href="/src/farm/reportSeason.html"><i class="fa-solid fa-address-book pr-2"></i>Thống Kê & Báo Cáo</a>
+                            <a href="/src/farm/reportSeason.html"><i class="fa-solid fa-address-book pr-2"></i>Thống Kê
+                                & Báo Cáo</a>
                         </li>
                     </ul>
                 </li>
@@ -81,6 +89,31 @@
                     <i class="fas fa-align-left"></i>
                 </button>
             </nav>
+            <h2 class="d-flex justify-content-center">CONTACT US</h2>
+            <div class="d-flex justify-content-center align-items-center">
+
+                <div>
+                    <a href="https://codepen.io/">
+                        <i id="codepen" class="fa-brands fa-codepen fa-2x"></i>
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <i id="facebook" class="fa-brands fa-facebook-f fa-2x"></i>
+                    </a>
+                    <a class="mr-1" href="https://twitter.com">
+                        <i id="twitter" class="fa-brands fa-twitter fa-2x"></i>
+                    </a>
+                    <a class="mr-1" href="https://www.linkedin.com/github.com/">
+
+                        <i id="github" class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                    <a  class="mr-1" href="https://www.linkedin.com/">
+                        <i id="linkedin" class="fa-brands fa-linkedin-in fa-2x"></i>
+                    </a>
+                    <a href="https://stackoverflow.com/">
+                        <i id="stack" class="fa-brands fa-stack-overflow fa-2x"></i>
+                    </a>
+                </div>
+            </div>
             <div>
                 <img style="width: 100%;" src="/img/map.jpg" alt="">
             </div>
@@ -99,6 +132,38 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
+            var enelm = document.getElementById("codepen");
+            var faelm = document.getElementById("facebook");
+            var twelm = document.getElementById("twitter");
+            var gielm = document.getElementById("github");
+            var lielm = document.getElementById("linkedin");
+            var stelm = document.getElementById("stack");
+
+            var opac = 0.1;
+            var opacup = true;
+            renderLoop();
+
+            function renderLoop() {
+                setTimeout(function () {
+                    if (opacup == true) {
+                        opac += 0.1;
+                        if (opac >= 1) opacup = false;
+                    }
+                    if (opacup == false) {
+                        opac -= 0.1;
+                        if (opac <= 0.3) opacup = true;
+                    }
+                    enelm.style.opacity = opac;
+                    faelm.style.opacity = opac;
+                    twelm.style.opacity = opac;
+                    gielm.style.opacity = opac;
+                    lielm.style.opacity = opac;
+                    stelm.style.opacity = opac;
+
+
+                    window.requestAnimationFrame(renderLoop);
+                }, 300);
+            }
         </script>
 </body>
 
